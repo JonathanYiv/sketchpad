@@ -1,0 +1,16 @@
+/* Centers the table and establishes a set height and width for the drawing area */
+.table {
+	margin: 0px auto;
+	height: 500px;
+	width: 500px;
+}
+
+button {
+	/* Need to align to center of screen */
+}
+
+
+/* This is a class that is added when hovering over part of the grid. */
+.changeColor {
+	background-color: black;
+}
