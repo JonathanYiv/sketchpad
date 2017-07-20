@@ -50,7 +50,7 @@ $(document).ready(function() {
 	// Clears the current Grid
 	$('.clear').on('click', function() {
 
-		$('td').removeClass("changeColor");
+		$('td').css("background-color", "rgb(255, 255, 255)");
 
 	});
 
