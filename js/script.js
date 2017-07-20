@@ -7,7 +7,7 @@ $(document).ready(function() {
 	function createGrid(x) {
 
 		$(".container").find('.table').remove();
-		$(".container").append('<table class="table"></table>');
+		$(".container").prepend('<table class="table"></table>');
 
 		for(var i = 0; i < x; i++) {
 			$(".table").append('<tr></tr>');
@@ -16,28 +16,26 @@ $(document).ready(function() {
 		for(var j = 0; j < x; j++) {
 			$("tr").append('<td></td>');
 		}
-
+		
 		activateHover();
 	}
 
 	// Creates a Function that activates the Drawing Mechanism
-	function activateHover() {
-		$("td").hover(function() {
+	/*function activateHover() {
+		$("td").on('mouseover', function() {
 
 			$(this).addClass("changeColor");
 
 		});
-	}
+	}*/
 
 	// Creates the Default Grid Size of 16 x 16
 	createGrid(16);
 
 	
 	
-	// Clears the Grid when clicked and prompts for a new size Grid
-	$('.clear').on('click', function() {
-
-		$('td').removeClass("changeColor");
+	// Prompts for a new size Grid
+	$('.size').on('click', function() {
 
 		var gridSize = parseInt(prompt("What size box do you want?", "16"));
 
@@ -49,7 +47,24 @@ $(document).ready(function() {
 
 	});
 
-	
+	// Clears the current Grid
+	$('.clear').on('click', function() {
 
+		$('td').removeClass("changeColor");
+
+	});
+
+
+	// Creates a random RGB value and paints each pixel a different color
+	function activateHover() {
+		$('td').on('mouseover', function() {
+
+			var r = Math.floor(Math.random() * 256);
+			var g = Math.floor(Math.random() * 256);
+			var b = Math.floor(Math.random() * 256);
+			$(this).css("background-color", "rgb(" + r + "," + g + "," + b + ")");
+		});
+	}
+	
 
 });
