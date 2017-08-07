@@ -4,6 +4,8 @@ This project builds a simple sketchpad that can be painted using your mouse and 
 
 This is a project from [The Odin Project](https://www.theodinproject.com/courses/web-development-101/lessons/javascript-and-jquery).
 
+![Sketchpad](/images/sketchpad.png)
+
 ## Installation
 
 Open your Terminal/Command Line. Navigate to the directory where your version will live. Type in the following:
